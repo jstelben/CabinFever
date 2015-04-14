@@ -204,7 +204,7 @@
               to you.</p>
           </div>
           <div class="ContentBox">
-            <a href="register.html"><img src="./Assets/Join.jpg"><a/>
+            <a href="registeruser.php"><img src="./Assets/Join.jpg"><a/>
           </div>
         </div>
 
