@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
     <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Khula' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="./HeaderFooterStyle.css">
     <script type="text/javascript" src="./jquery.js"></script>
     <script type="text/javascript">
       $(document).ready( function(){
@@ -24,100 +25,38 @@
         }, 3000);
       }
     </script>
+    <style type="text/css" href="./HeaderFooterStyle.css"></style>
     <style type="text/css">
-      html{
-
+      .UserAccessRow{
+        padding-bottom: 10px;
+        border-bottom: solid;
+        border-width: 10px;
+        border-color: #FFF;
+        margin-top: 40px;
+        margin-right: 50px;
+        margin-left: 235px;
       }
 
-      body{
-        margin: 0px;
-        background-color: #C1D0FF;
-      }
-
-      h1, h2, h3{
-        margin: 0px;
-        font-family: 'Play', sans-serif;
-      }
-
-      p{
-        margin: 0px;
-        font-family: 'Khula', sans-serif;
-      }
-
-      header{
-        overflow: auto;
-        overflow: hidden;
-        width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #222222;
-      }
-
-        .HeaderLeft{
-          float: left;
-          width: 425px;
-          height: 120px;
-          padding-left: 75px;
-          padding-right: 100px;
-          padding-top: 65px;
-          padding-bottom: 65px;
+        .UserAccessRow h3{
+          text-align: right;
+          font-size: 150%;
+          color: #FFF;
         }
 
-          .LogoWrap{
-            float: left;
-            width: 120px;
-            height: 120px;
-            border-radius: 60px;
-            background-color: #95B6FF;
-          }
-
-          .SloganWrap{
-            float:left;
-            text-align: center;
-            width: 305px;
-            height: 120px;
-          }
-
-            .SloganWrap h1{
-              font-size: 300%;
-              color: #E05B00;
-            }
-
-            .SloganWrap h2{
-              text-align: left;
-              font-size: 150%;
-              padding-left: 36px;
-              color: #FFF;
-            }
-
-        .HeaderRight{
-          float: left;
-          width: 400px;
-          height: 250px;
+        #Register a:visited, a:link{
+          color: #FFF;
+          text-decoration: none;
         }
 
-          .SocialMediaRow{
-            overflow: auto;
-            overflow: hidden;
-            margin-top: 4px;
-            margin-bottom: 4px;
-          }
+        #Register a:hover{
+          color: #99BBFF;
+          text-decoration: none;
+        }
 
-            .SocialMediaIcon{
-              float: right;
-              margin-right: 4px;
-            }
-
-          .UserAccessRow{
-            margin-top: 40px;
-            margin-right: 50px;
-          }
-
-            .UserAccessRow h3{
-              text-align: right;
-              font-size: 150%;
-              color: #FFF;
-            }
+        #Register a:active{
+          color: #EE5500;
+          text-decoration: none;
+        }
 
       main{
         width: 100%;
@@ -126,31 +65,36 @@
         .SlideShowWrap{
           position: relative;
           width: 1000px;
-          height: 400px;
+          height: 350px;
+          padding-top: 50px;
+          padding-bottom: 50px;
+
           margin-left: auto;
           margin-right: auto;
-          background-color: #FFF;
         }
 
           .SlideShowWrap img{
             position: absolute;
+            padding-left: 175px;
+            padding-right: 175px;
+            background-color: #FFF;
           }
 
         .BreakWrap{
           text-align: center;
           width: 100%;
-          height: 125px;
-          background-color: #555555;
+          height: 75px;
+          background-color: #555;
         }
 
           .InnerBreak{
             position: relative;
             text-align: center;
             width:1150px;
-            height: 75px;
+            height: 50px;
             top:50%;
         		transform: translateY(-50%);
-            border-radius: 32.5px;
+            border-radius: 25px;
             margin: auto;
             background-color: #FFF;
           }
@@ -168,6 +112,8 @@
           max-height: 600px;
           padding-top: 25px;
           padding-bottom: 25px;
+          padding-left: 50px;
+          padding-right: 50px;
           margin-left: auto;
           margin-right: auto;
           background-color: #FFF;
@@ -186,82 +132,51 @@
             }
 
               .ContentBox h3{
+                font-size: 150%;
+                padding-top: 2.5px;
+                padding-bottom: 2.5px;
                 border-top: solid;
                 border-bottom: solid;
-                margin-right: 180px;
               }
 
               .ContentBox p{
                 margin-top: 10px;
               }
-
-      footer{
-        overflow: auto;
-        width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #222222;
-      }
-
-        footer h2{
-          font-size: 150%;
-          padding-top: 2px;
-          padding-bottom: 3px;
-          border-top: solid;
-          border-bottom: solid;
-          border-width: 1px;
-          margin-right: 125px;
-          color:#FFF;
-        }
-
-        .FooterColumn{
-          float: left;
-          width: 250px;
-          height: 250px;
-          margin: 25px;
-        }
-
-        .AboutColumn{
-
-        }
-
-        .ExtraColumn{
-          width: 350px;
-        }
-
-        .ContactColumn{
-
-        }
       </style>
   </head>
 
   <body>
     <header>
-      <div class="HeaderLeft">
-        <div class="LogoWrap">
-          <img src="./Assets/CabinFeverLogo.png">
+      <div class="HeaderFloatWrap">
+        <div class="HeaderLeft">
+          <div class="LogoWrap">
+            <img src="./Assets/CabinFeverLogo.png">
+          </div>
+          <div class="SloganWrap">
+            <h1>CabinFever</h1>
+            <h2>Let's Go Outside</h2>
+          </div>
         </div>
-        <div class="SloganWrap">
-          <h1>CabinFever</h1>
-          <h2>Let's Go Outside</h2>
-        </div>
-      </div>
 
-      <div class="HeaderRight">
-        <div class="SocialMediaRow">
-          <img src="./Assets/SocialMediaIcon-FB.png" class="SocialMediaIcon">
-          <img src="./Assets/SocialMediaIcon-GP.png" class="SocialMediaIcon">
-          <img src="./Assets/SocialMediaIcon-LI.png" class="SocialMediaIcon">
-          <img src="./Assets/SocialMediaIcon-P.png" class="SocialMediaIcon">
-          <img src="./Assets/SocialMediaIcon-RSS.png" class="SocialMediaIcon">
-          <img src="./Assets/SocialMediaIcon-TW.png" class="SocialMediaIcon">
-          <img src="./Assets/SocialMediaIcon-YT.png" class="SocialMediaIcon">
-        </div>
+        <div class="HeaderRight">
+          <div class="SocialMediaRow">
+            <img src="./Assets/SocialMediaIcon-FB.png" class="SocialMediaIcon">
+            <img src="./Assets/SocialMediaIcon-GP.png" class="SocialMediaIcon">
+            <img src="./Assets/SocialMediaIcon-LI.png" class="SocialMediaIcon">
+            <img src="./Assets/SocialMediaIcon-P.png" class="SocialMediaIcon">
+            <img src="./Assets/SocialMediaIcon-RSS.png" class="SocialMediaIcon">
+            <img src="./Assets/SocialMediaIcon-TW.png" class="SocialMediaIcon">
+            <img src="./Assets/SocialMediaIcon-YT.png" class="SocialMediaIcon">
+          </div>
         <div class="UserAccessRow">
           <h3>Sign In</h3>
-          <h3>Register</h3>
+          <!--- DONT FORGET TO CHANGE THIS LINK TO .PHP ****************************************** -->
+          <h3 id="Register"><a href="registeruser.php">Register<a/></h3>
         </div>
       </div>
+    </div>
+    <div class="HeaderAccentColorBox">
+    </div>
     </header>
 
     <main>
@@ -271,16 +186,17 @@
         <img src="./Assets/img3.jpg">
         <img src="./Assets/img4.jpg">
       </div>
+
       <div class="BreakWrap">
         <div class="InnerBreak">
-          <h1>-Emphasized Text-</h1>
+          <h1><b>Welcome To Our Solution To Your Boredom Dynamically</b></h1>
         </div>
       </div>
 
       <div class="MainContentWrap">
         <div class="ContentColumn">
           <div class="ContentBox">
-            <h3>Join</h3>
+            <h3 style="margin-right: 157.5px">Join Up</h3>
             <p>Find people you never knew that have similiar interests and hobbies
                as we can guide you to the communities you belong to.
               If you find yourself to be motivated to start a new following,
@@ -288,7 +204,7 @@
               to you.</p>
           </div>
           <div class="ContentBox">
-            <img src="./Assets/Join.jpg">
+            <a href="register.html"><img src="./Assets/Join.jpg"><a/>
           </div>
         </div>
 
@@ -297,7 +213,7 @@
             <img src="./Assets/Ship.jpg">
           </div>
           <div class="ContentBox">
-            <h3>Discover</h3>
+            <h3 style="margin-right: 147.5px">Discover</h3>
             <p>We can help you explore the many different pass times and hobbies
               that exist out there. And with every feedback that you give us about your events,
               we can be more accurate to what you're really interested in.
@@ -307,7 +223,7 @@
 
         <div class="ContentColumn">
           <div class="ContentBox">
-            <h3>Expand</h3>
+            <h3 style="margin-right: 162.5px">Expand</h3>
             <p>Our services might help bring new customers to your business,
               but only if you let us. Begin a collaboration to start a whole new
               burst of activity and spark new interest in the businesses you own.</p>
@@ -320,14 +236,19 @@
     </main>
 
     <footer>
-      <div class="FooterColumn AboutColumn">
-        <h2>About</h2>
+      <div class="FooterAccentColorBox">
       </div>
-      <div class="FooterColumn ExtraColumn">
-        <h2>Additionally</h2>
-      </div>
-      <div class="FooterColumn ContactColumn">
-        <h2>Contact</h2>
+
+      <div class="FooterFloatWrap">
+        <div class="FooterColumn AboutColumn">
+          <h2>About</h2>
+        </div>
+        <div class="FooterColumn ExtraColumn">
+          <h2>Additional</h2>
+        </div>
+        <div class="FooterColumn ContactColumn">
+          <h2>Contact</h2>
+        </div>
       </div>
     </footer>
   </body>
