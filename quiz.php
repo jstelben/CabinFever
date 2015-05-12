@@ -25,8 +25,15 @@
           }
           .QuizWrap li{
             margin-bottom: 2em;
-
           }
+          .Prompt{
+            padding: 25px;
+            border: solid 2px black;
+            margin: 0px 25px 25px 25px;
+          }
+            .Prompt h1{
+              padding-bottom: 10px;
+            }
           .question-answer-wrap{
             margin: 4px 0 4px 0;
           }
@@ -77,8 +84,13 @@
 
     <main>
       <div class="QuizWrap">
+
+        <div class="Prompt">
+          <h1>Thanks for registering!</h1>
+          <p>You only a little bit more to do before you can start trying out CabinFever!
+            Please fill out a short quiz before you begin so we can have a general idea of where you would like to go.</p>
+        </div>
         <h2><b>Quiz</b></h2>
-        <p>Please fill out a short quiz before you begin CabinFever</p>
         <form class="quiz" action="JavaScript:submitForm()">
           <ol>
             <li>
@@ -98,7 +110,7 @@
               <h3>Would you rather:</h3>
               <div class="question-answer-wrap">
                 <input type="radio" name="question-2-answers"
-                  id="question-2-answers-A" value="A">
+                  id="question-1-answers-A" value="A">
                 <label for="question-2-answers">A) Walk in the woods</label>
               </div>
               <div class="question-answer-wrap">
@@ -212,154 +224,6 @@
 
 <script>
 	function submitForm(event){
-		algorithm();
-		var xmlhttp;
-		xmlhttp = new XMLHttpRequest();
-		var question1, question2, question3, question4, question5, question6, question7, question8;
-		
-		if(document.getElementById('question-1-answers-A').checked)
-		{
-			question1 = 'A';
-		}
-		else if(document.getElementById('question-1-answers-B').checked)
-		{
-			question1 = 'B';
-		}
-		else
-		{
-			alert("You need to answer question 1");
-			return;
-		}
-		if(document.getElementById('question-2-answers-A').checked)
-		{
-			question2 = 'A';
-		}
-		else if(document.getElementById('question-2-answers-B').checked)
-		{
-			question2 = 'B';
-		}
-		else
-		{
-			alert("You need to answer question 2");
-			return;
-		}
-		if(document.getElementById('question-3-answers-A').checked)
-		{
-			question3 = 'A';
-		}
-		else if(document.getElementById('question-3-answers-B').checked)
-		{
-			question3 = 'B';
-		}
-		else
-		{
-			alert("You need to answer question 3");
-			return;
-		}
-		if(document.getElementById('question-4-answers-A').checked)
-		{
-			question4 = 'A';
-		}
-		else if(document.getElementById('question-4-answers-B').checked)
-		{
-			question4 = 'B';
-		}
-		else
-		{
-			alert("You need to answer question 4");
-			return;
-		}
-		if(document.getElementById('question-5-answers-A').checked)
-		{
-			question5 = 'A';
-		}
-		else if(document.getElementById('question-5-answers-B').checked)
-		{
-			question5 = 'B';
-		}
-		else
-		{
-			alert("You need to answer question 5");
-			return;
-		}
-		if(document.getElementById('question-6-answers-A').checked)
-		{
-			question6 = 'A';
-		}
-		else if(document.getElementById('question-6-answers-B').checked)
-		{
-			question6 = 'B';
-		}
-		else
-		{
-			alert("You need to answer question 6");
-			return;
-		}
-		if(document.getElementById('question-7-answers-A').checked)
-		{
-			question7 = 'A';
-		}
-		else if(document.getElementById('question-7-answers-B').checked)
-		{
-			question7 = 'B';
-		}
-		else
-		{
-			alert("You need to answer question 7");
-			return;
-		}
-		if(document.getElementById('question-8-answers-A').checked)
-		{
-			question8 = 'A';
-		}
-		else if(document.getElementById('question-8-answers-B').checked)
-		{
-			question8 = 'B';
-		}
-		else
-		{
-			alert("You need to answer question 8");
-			return;
-		}
-		xmlhttp.onreadystatechange = function() {
-			if(xmlhttp.readyState == 4){
-				if(xmlhttp.status == 200 && xmlhttp.status < 300){
-					//switch pages here
-					var returnVal = xmlhttp.responseText;
-					if(returnVal == "Success")
-					{
-						//navigate
-						document.location.href = "result.php";
-					}
-					else if(returnVal == "Error")
-					{
-						alert("Unable to process quiz results.");
-					}
-				}
-			}
-		};
-		xmlhttp.open('POST', 'quizresults.php');
-		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xmlhttp.send("question1=" + question1 + "&question2=" + question2 + "&question3=" + question3 +
-			"&question4=" + question4 + "&question5=" + question5 + "&question6=" + question6 +
-			"&question7=" + question7 + "&question8=" + question8);
-	}
-	function algorithm()
-	{
-		var events = new Array(8);
-		<?php session_start(); $_SESSION['currentEventNum'] = 1; require('getevents.php');for($i = 0; $i < 8; $i++){ ?>
-			var event = [];
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['physical']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['challenging']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['relaxing']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['food']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['money']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['historical']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['cultural']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['inside']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['outside']); ?>);
-			events.push(event);
-		<?php } ?>
-		//firgure push with 2 d array or something
+		document.location.href = "result.php";
 	}
 </script>
