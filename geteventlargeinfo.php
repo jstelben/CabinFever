@@ -11,7 +11,6 @@ echo '
 				        <h1>'.$result['NAME'].'</h1>
 				      </div>
 				    </div>
-				
 				    <div class="MainWrap">
 				      <div class="MainColumnWrap">
 				        <div class="ResultColumnLeft">;
