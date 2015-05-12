@@ -5,15 +5,15 @@
 		<meta charset="utf-8">
     <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Khula' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="./HeaderFooterStyle.css">
-    <script type="text/javascript" src="./jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Styles/DefaultHeaderFooterStyle.css">
+    <script type="text/javascript" src="./Assets/jquery.js"></script>
     <style type="text/css">
       main{
         width: 100%;
       }
-
         .MainWrap{
-          position: relative;
+          overflow: auto;
+          overflow: hidden;
           width: 800px;
           padding: 100px;
           margin-left: auto;
@@ -22,46 +22,61 @@
           font-family: 'Khula', sans-serif;
         }
 
-          .MainWrap h2{
-            margin: 0 0 1em 1.5em;
-            font-size: 150%;
-            font-family: 'Khula', sans-serif;
-
+          .LeftMainFloat{
+            float: left;
+            width: 320px;
+            padding-top: 100px
           }
 
-          .control-group{
-            margin-bottom: 0.5em;
-          }
-
-            .control-label{
-              display: inline-block;
-              vertical-align: middle;
-              width: 100px;
-              margin-right: 10px;
-              text-align: right;
+            .LeftMainFloat h2{
+              margin: 0 1.5em 1em 1.5em;
+              font-size: 150%;
+              font-family: 'Khula', sans-serif;
             }
-
-            .control-input{
-              display: inline-block;
-              vertical-align: middle;
-              padding: 0.5em 0.6em;
-              border: 1px solid #CCC;
-              box-shadow: inset 0 1px 3px #DDD;
+            .control-group{
+              margin-bottom: 0.5em;
             }
+              .control-label{
+                display: inline-block;
+                vertical-align: middle;
+                width: 100px;
+                margin-right: 10px;
+                text-align: right;
+              }
+              .control-input{
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0.5em 0.6em;
+                border: 1px solid #CCC;
+                box-shadow: inset 0 1px 3px #DDD;
+              }
+            .control{
+              margin: 1.5em 0 0 8em;
+            }
+              .control-button{
+                touch-action: none;
+                padding: 8px 16px 8px 16px;
+                border-radius: 2px;
+                cursor: pointer;
+                background-color: #99BBFF;
+                color: #FFF;
+                text-align: center;
+                text-decoration: none;
+              }
 
-          .control{
-            margin: 1.5em 0 0 10em;
+        .RightMainFloat{
+          float: right;
+          width: 420px;
+          padding-left: 40px;
+        }
+
+          .FloatRow{
+            margin-top: 10px;
+            margin-bottom: 10px;
           }
 
-            .control-button{
-              touch-action: none;
-              padding: 8px 16px 8px 16px;
-              border-radius: 2px;
-              cursor: pointer;
-              background-color: #99BBFF;
-              color: #FFF;
-              text-align: center;
-              text-decoration: none;
+            .FloatRow h2{
+              font-family: 'Khula', sans-serif;
             }
     </style>
 <body>
@@ -69,7 +84,7 @@
     <div class="HeaderFloatWrap">
       <div class="HeaderLeft">
         <div class="LogoWrap">
-          <img src="./Assets/CabinFeverLogo.png">
+          <img src="./Assets/CabinFeverLogoSmaller.png">
         </div>
         <div class="SloganWrap">
           <h1>CabinFever</h1>
@@ -90,32 +105,60 @@
       </div>
     </div>
 
-    <div class="HeaderAccentColorBox">
+    <div class="AccentColorBox">
     </div>
   </header>
 
   <main>
     <div class="MainWrap">
-      <h2>Sign Up to CabinFever!</h2>
-      <form class="aligned-form" action="JavaScript:addUser()" method="post">
-        <div class="control-group">
-          <label class="control-label" for="email">Email</label>
-          <input class="control-input" id="email" type="text" placeholder="Email Address">
+      <div class="LeftMainFloat">
+        <h2>Sign Up to CabinFever!</h2>
+        <form class="aligned-form" action="JavaScript:addUser()" method="post">
+          <div class="control-group">
+            <label class="control-label" for="email">Email</label>
+            <input class="control-input" id="email" type="text" placeholder="Email Address">
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <input class="control-input" type="password" id="password"type="text" placeholder="Password">
+          </div>
+          <div class="control">
+            <button type="submit" class="control-button">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="RightMainFloat">
+        <div class="FloatRow">
+          <h2 style="color: #EE5500">Sign Up to CabinFever-</h2>
+          <p> Ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum </p>
         </div>
-        <div class="control-group">
-          <label class="control-label" for="password">Password</label>
-          <input class="control-input" type="password" id="password"type="text" placeholder="Password">
+        <div class="FloatRow">
+          <h2 style="color: #99BBFF">Sign Up to CabinFever-</h2>
+          <p> Ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum </p>
         </div>
-        <div class="control">
-          <button type="submit" class="control-button">Submit</button>
+        <div class="FloatRow">
+          <h2 style="color: #EE5500">Sign Up to CabinFever-</h2>
+          <p> Ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum </p>
         </div>
-      </form>
+        <div class="FloatRow">
+          <h2 style="color: #99BBFF">Sign Up to CabinFever-</h2>
+          <p> Ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
+            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum </p>
+        </div>
+      </div>
     </div>
   </main>
 
-
   <footer>
-    <div class="FooterAccentColorBox">
+    <div class="AccentColorBox">
     </div>
 
     <div class="FooterFloatWrap">
