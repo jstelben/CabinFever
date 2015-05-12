@@ -14,9 +14,11 @@ echo '
 				
 				    <div class="MainWrap">
 				      <div class="MainColumnWrap">
-				
 				        <div class="ResultColumnLeft">;
 				          <img src="data:image/jpeg;base64,'.base64_encode($result['LARGE_IMAGE']).'"/>
+				          <div class="control">
+			                    <button type="go" class="control-button">I'm Going!</button>
+			                  </div>
 				        </div>
 				        <div class="ResultColumnRight">
 				          <h3>Date: '.$result['DATE'].'</h3>
