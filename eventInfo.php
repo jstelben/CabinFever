@@ -108,7 +108,6 @@
           <h2>Let's Go Outside</h2>
         </div>
       </div>
-
       <div class="HeaderRight">
         <div class="UpperRightFloatWrap">
           <div class="NameDisplay">
