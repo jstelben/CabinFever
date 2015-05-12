@@ -10,10 +10,11 @@ $sql = "INSERT INTO Users SET EMAIL = '$newEmail', PASSWORD = '$newPassword'";
 if(!mysqli_query($link, $sql))
 {
 	$error = 'Error inserting new user: ' . mysqli_error($link);
-	die($error);
 	echo "Error";
+	exit();
 }
 session_start();
 $_SESSION["email"] = $newEmail;
+include("closeconnection.php");
 echo "Success";
 ?>

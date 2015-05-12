@@ -2,7 +2,7 @@
 define('DB_SERVER', 'mysql-cabinfever.cnhahfkidjqh.us-west-2.rds.amazonaws.com');
 define('DB_USERNAME', 'cabinfever');
 define('DB_PASSWORD', 'cabinfever');
-define('DB_DATABASE', 'Clients');
+define('DB_DATABASE', 'CabinFever');
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 if(!$link)
 {

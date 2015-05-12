@@ -5,13 +5,12 @@
 		<meta charset="utf-8">
     <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Khula' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="./HeaderFooterStyle.css">
-    <script type="text/javascript" src="./jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Styles/DefaultHeaderFooterStyle.css">
+    <script type="text/javascript" src="./Assets/jquery.js"></script>
     <style type="text/css">
       main{
         width: 100%;
       }
-
         main h2, h3{
           font-family: 'Khula', sans-serif;
         }
@@ -91,238 +90,52 @@
         <div class='ResultColumn'>
 	  <?php 
 	  	session_start();
-	  	$_SESSION['rand1'] = 0;
-	  	$_SESSION['rand2'] = 0;
-		$_SESSION['rand3'] = 0;
-		
-		$_SESSION['rand1'] = rand(1, 8);
-		$_SESSION['rand2'] = rand(1, 8);
-		while($_SESSION['rand1'] == $_SESSION['rand2'])
+		if(!isset($_SESSION['rand1']))
 		{
-			$_SESSION['rand2'] = rand(1, 8);
+			$_SESSION['rand1'] = 0;
+			$_SESSION['rand1'] = rand(1, 8);
 		}
-		$_SESSION['rand3'] = rand(1, 8);
-		while($_SESSION['rand1'] == $_SESSION['rand3'] || $_SESSION['rand2'] == $_SESSION['rand3'])
+	  	if(!isset($_SESSION['rand2']))
+	  	{
+	  		$_SESSION['rand2'] = 0;
+	  		$_SESSION['rand2'] = rand(1, 8);
+			while($_SESSION['rand1'] == $_SESSION['rand2'])
+			{
+				$_SESSION['rand2'] = rand(1, 8);
+			}
+	  	}
+	  	if(!isset($_SESSION['rand3']))
 		{
-			$_SESSION['rand3'] = rand(1, 8);	
+			$_SESSION['rand3'] = 0;
+			$_SESSION['rand3'] = rand(1, 8);
+			while($_SESSION['rand1'] == $_SESSION['rand3'] || $_SESSION['rand2'] == $_SESSION['rand3'])
+			{
+				$_SESSION['rand3'] = rand(1, 8);	
+			}
 		}
-		
-		switch($_SESSION['rand1'])
-		{
-			case 1:
-				{
-					echo "
-					<img src='./Assets/lacrosse.jpg'>
-          			<h3>Lacrosse vs Vassar College</h3>
-          			<p>RIT Lacrosse Match</p>";
-					break;
-				}
-			case 2:
-				{
-					echo "
-					<img src='./Assets/rockyhorror.jpg'>
-          			<h3>Rocky Horror Picture Show</h3>
-          			<p>A Fun Impromptu Show</p>";
-					break;
-				}
-			case 3:
-				{
-					echo "
-					<img src='./Assets/lego.jpg'>
-          			<h3>Lego Club</h3>
-          			<p>Come Join Other Lego Enthusiasts</p>";
-					break;
-				}
-			case 4:
-				{
-					echo "
-					<img src='./Assets/icecream.jpg'>
-          			<h3>Ben & Jerry's Free Cone Day</h3>
-          			<p>Come Get A Free Cone On Us!</p>";
-					break;
-				}
-			case 5:
-				{
-					echo "
-					<img src='./Assets/cards.jpg'>
-          			<h3>RWAG</h3>
-          			<p>Join Us For Card Games And Board Games</p>";
-					break;
-				}
-			case 6:
-				{
-					echo "
-					<img src='./Assets/sniper.jpg'>
-          			<h3>American Sniper</h3>
-          			<p>Come Watch This Great Movie For Free</p>";
-					break;
-				}
-			case 7:
-				{
-					echo "
-					<img src='./Assets/improv.jpg'>
-          			<h3>Improv Show</h3>
-          			<p>Be Entertained By Our Improv Troup</p>";
-					break;
-				}
-			case 8:
-				{
-					echo "
-					<img src='./Assets/poetry.jpg'>
-          			<h3>Poetry Slam</h3>
-          			<p>Show Us Your Slam Poetry Skills</p>";
-					break;
-				}
-		}
+		$_SESSION['currentEventNum'] = $_SESSION['rand1'];
+		require('geteventsmallinfo.php');
 	  ?>
 	  </div>
         <div class="ResultColumn">
           <?php
-          	switch($_SESSION['rand2'])
-			{
-			case 1:
-				{
-					echo "
-					<img src='./Assets/lacrosse.jpg'>
-          			<h3>Lacrosse vs Vassar College</h3>
-          			<p>RIT Lacrosse Match</p>";
-					break;
-				}
-			case 2:
-				{
-					echo "
-					<img src='./Assets/rockyhorror.jpg'>
-          			<h3>Rocky Horror Picture Show</h3>
-          			<p>A Fun Impromptu Show</p>";
-					break;
-				}
-			case 3:
-				{
-					echo "
-					<img src='./Assets/lego.jpg'>
-          			<h3>Lego Club</h3>
-          			<p>Come Join Other Lego Enthusiasts</p>";
-					break;
-				}
-			case 4:
-				{
-					echo "
-					<img src='./Assets/icecream.jpg'>
-          			<h3>Ben & Jerry's Free Cone Day</h3>
-          			<p>Come Get A Free Cone On Us!</p>";
-					break;
-				}
-			case 5:
-				{
-					echo "
-					<img src='./Assets/cards.jpg'>
-          			<h3>RWAG</h3>
-          			<p>Join Us For Card Games And Board Games</p>";
-					break;
-				}
-			case 6:
-				{
-					echo "
-					<img src='./Assets/sniper.jpg'>
-          			<h3>American Sniper</h3>
-          			<p>Come Watch This Great Movie For Free</p>";
-					break;
-				}
-			case 7:
-				{
-					echo "
-					<img src='./Assets/improv.jpg'>
-          			<h3>Improv Show</h3>
-          			<p>Be Entertained By Our Improv Troup</p>";
-					break;
-				}
-			case 8:
-				{
-					echo "
-					<img src='./Assets/poetry.jpg'>
-          			<h3>Poetry Slam</h3>
-          			<p>Show Us Your Slam Poetry Skills</p>";
-					break;
-				}
-		}
+          	session_start();
+          	$_SESSION['currentEventNum'] = $_SESSION['rand2'];
+          	require('geteventsmallinfo.php');
 	  ?>
         </div>
         <div class="ResultColumn">
         <?php
-          switch($_SESSION['rand3'])
-			{	
-			case 1:
-				{
-					echo "
-					<img src='./Assets/lacrosse.jpg'>
-          			<h3>Lacrosse vs Vassar College</h3>
-          			<p>RIT Lacrosse Match</p>";
-					break;
-				}
-			case 2:
-				{
-					echo "
-					<img src='./Assets/rockyhorror.jpg'>
-          			<h3>Rocky Horror Picture Show</h3>
-          			<p>A Fun Impromptu Show</p>";
-					break;
-				}
-			case 3:
-				{
-					echo "
-					<img src='./Assets/lego.jpg'>
-          			<h3>Lego Club</h3>
-          			<p>Come Join Other Lego Enthusiasts</p>";
-					break;
-				}
-			case 4:
-				{
-					echo "
-					<img src='./Assets/icecream.jpg'>
-          			<h3>Ben & Jerry's Free Cone Day</h3>
-          			<p>Come Get A Free Cone On Us!</p>";
-					break;
-				}
-			case 5:
-				{
-					echo "
-					<img src='./Assets/cards.jpg'>
-          			<h3>RWAG</h3>
-          			<p>Join Us For Card Games And Board Games</p>";
-					break;
-				}
-			case 6:
-				{
-					echo "
-					<img src='./Assets/sniper.jpg'>
-          			<h3>American Sniper</h3>
-          			<p>Come Watch This Great Movie For Free</p>";
-					break;
-				}
-			case 7:
-				{
-					echo "
-					<img src='./Assets/improv.jpg'>
-          			<h3>Improv Show</h3>
-          			<p>Be Entertained By Our Improv Troup</p>";
-					break;
-				}
-			case 8:
-				{
-					echo "
-					<img src='./Assets/poetry.jpg'>
-          			<h3>Poetry Slam</h3>
-          			<p>Show Us Your Slam Poetry Skills</p>";
-					break;
-				}
-		}
+          session_start();
+          $_SESSION['currentEventNum'] = $_SESSION['rand3'];
+          require('geteventsmallinfo.php');
 	  ?>
         </div>
       </div>
 
       <div id="Conclusion">
         <!--- DONT FORGET TO CHANGE THIS LINK TO .PHP ****************************************** -->
-        <h2><a href="./index.html">Reset User Testing</a></h2>
+        <h2><a href="index.php">Reset User Testing</a></h2>
       </div>
     </div>
   </main>
@@ -346,3 +159,59 @@
   </footer>
 </body>
 </html>
+
+<script>
+	function goToEventInfo(event){
+		switch(event)
+		{
+			case 1:
+			{
+				document.location.href = "eventInfo.php?event=1";
+				break;
+			}
+			case 2:
+			{
+				document.location.href = "eventInfo.php?event=2";
+				break;
+			}
+			case 3:
+			{
+				document.location.href = "eventInfo.php?event=3";
+				break;
+			}
+			case 4:
+			{
+				document.location.href = "eventInfo.php?event=4";
+				break;
+			}
+			case 5:
+			{
+				document.location.href = "eventInfo.php?event=5";
+				break;
+			}
+			case 6:
+			{
+				document.location.href = "eventInfo.php?event=6";
+				break;
+			}
+			case 7:
+			{
+				document.location.href = "eventInfo.php?event=7";
+				break;
+			}
+			case 8:
+			{
+				document.location.href = "eventInfo.php?event=8";
+				break;
+			}
+		}
+	};
+	function killSession()
+	{
+		<?php
+			session_start();
+			$destroyed = session_destroy();
+		?>
+		document.location.href = "index.php";
+	}
+</script>

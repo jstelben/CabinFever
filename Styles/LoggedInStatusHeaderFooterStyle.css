@@ -1,0 +1,194 @@
+
+html{
+
+}
+
+body{
+  margin: 0px;
+  background-color: #CCDDFF;
+}
+
+h1, h2, h3{
+  margin: 0px;
+  font-family: 'Play', sans-serif;
+}
+
+p{
+  margin: 0px;
+  font-family: 'Khula', sans-serif;
+}
+
+.AccentColorBox{
+  width: 1000px;
+  height: 25px;
+  background-color: #555;
+}
+
+header{
+  overflow: auto;
+  overflow: hidden;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #222;
+}
+
+  .HeaderFloatWrap{
+    overflow: auto;
+    overflow: hidden;
+  }
+
+    .HeaderLeft{
+      float: left;
+      width: 80px;
+      height: 80px;
+      padding: 20px;
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+
+      .LogoWrap{  }
+
+      .SloganWrap{
+        display: none;
+      }
+
+    .HeaderRight{
+      overflow: auto;
+      overflow: hidden;
+      float: right;
+      width: 830px;
+    }
+
+      .UpperRightFloatWrap{
+        overflow: auto;
+        overflow: hidden;
+        height: 60px;
+      }
+
+        .NameDisplay h2{
+          float: left;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          font-size: 200%;
+          color: #EE5500;
+        }
+
+        .SocialMediaRow{
+          float: right;
+          overflow: auto;
+          overflow: hidden;
+          margin-top: 14px;
+          margin-bottom: 14px;
+        }
+
+          .SocialMediaIcon{
+            float: right;
+            margin-right: 4px;
+          }
+
+    .UserInterfaceTabs{
+      overflow: hidden;
+      padding-top: 15px;
+      padding-right: 50px;
+    }
+
+      .UITab{
+        float: right;
+        margin-left: 20px;
+        text-decoration: underline;
+      }
+
+        .UITab a:visited, a:link{
+          color: #FFF;
+          text-decoration: none;
+        }
+
+        .UITab a:hover{
+          color: #99BBFF;
+          text-decoration: none;
+        }
+
+        .UITab a:active{
+          color: #EE5500;
+          text-decoration: none;
+        }
+
+      .strong-tab{
+        float: right;
+        margin-left: 20px;
+        text-decoration: underline;
+      }
+
+        .strong-tab a:visited, a:link{
+          color: #99BBFF;
+          text-decoration: none;
+        }
+
+        .strong-tab a:hover{
+          color: #CCDDFF;
+          text-decoration: none;
+        }
+
+        .strong-tab a:active{
+          color: #EE5500;
+          text-decoration: none;
+        }
+
+    .UserAccessRow{
+      display: none;
+    }
+
+  footer{
+    overflow: auto;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #222;
+  }
+
+    footer h2{
+      font-size: 150%;
+      padding-top: 2px;
+      padding-bottom: 3px;
+      border-top: solid;
+      border-bottom: solid;
+      border-width: 1px;
+      margin-right: 125px;
+      color: #99BBFF;
+    }
+
+      .FooterAccentColorBox{
+        width: 1000px;
+        height: 25px;
+        background-color: #555;
+
+      }
+
+      .FooterFloatWrap{
+        overflow: auto;
+        overflow: hidden;
+      }
+
+        .FooterColumn{
+          float: left;
+          width: 250px;
+          height: 250px;
+          margin: 25px;
+        }
+
+        .AboutColumn{
+
+        }
+
+        .ExtraColumn{
+          width: 350px;
+        }
+
+        .ContactColumn{
+
+        }
+
+  .BreakWrap{
+    display: none;
+  }

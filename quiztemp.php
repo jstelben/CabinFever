@@ -212,7 +212,7 @@
 
 <script>
 	function submitForm(event){
-		algorithm();
+		//algorithm();
 		var xmlhttp;
 		xmlhttp = new XMLHttpRequest();
 		var question1, question2, question3, question4, question5, question6, question7, question8;
@@ -346,20 +346,56 @@
 	}
 	function algorithm()
 	{
-		var events = new Array(8);
-		<?php session_start(); $_SESSION['currentEventNum'] = 1; require('getevents.php');for($i = 0; $i < 8; $i++){ ?>
+		var xmlhttp;
+		xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if(xmlhttp.readyState == 4){
+				if(xmlhttp.status == 200 && xmlhttp.status < 300){
+					//switch pages here
+					var returnVal = xmlhttp.responseText;
+					if(returnVal == "Success")
+					{
+						//navigate
+						document.location.href = "quiz.php";
+					}
+					else if(returnVal == "Error")
+					{
+						alert("That email is already taken.");
+					}
+					else if(returnVal == "Invalid")
+					{
+						alert("That email is not valid.");
+					}
+				}
+			}
+		};
+		xmlhttp.open('POST', 'adduser.php');
+		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xmlhttp.send("newemail=" + userEmail + "&newpassword=" + userPassword);
+		var events = [];
+		<?php session_start(); $_SESSION['eventNum'] = 0; ?>
+		for(int i = 0; i < 9; i++)
+		{
+			<?php session_start(); require('getevents.php'); ?>
 			var event = [];
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['physical']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['challenging']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['relaxing']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['food']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['money']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['historical']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['cultural']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['inside']); ?>);
-			event.push(<?php session_start(); echo json_encode($_SESSION['events'][$i]['outside']); ?>);
+			event.push(<?php session_start(); echo json_encode(''.$_SESSION['events'][$_SESSION['eventNum']]['physical']); ?>);
+			event.push(<?php session_start(); echo json_encode(''.$_SESSION['events'][$_SESSION['eventNum']]['challenging']); ?>);
+			event.push(<?php session_start(); echo json_encode(''.$_SESSION['events'][$_SESSION['eventNum']]['relaxing']); ?>);
+			event.push(<?php session_start(); echo json_encode(''.$_SESSION['events'][$_SESSION['eventNum']]['food']); ?>);
+			event.push(<?php session_start(); echo json_encode(''.$_SESSION['events'][$_SESSION['eventNum']]['money']); ?>);
+			event.push(<?php session_start(); echo json_encode(''.$_SESSION['events'][$_SESSION['eventNum']]['historical']); ?>);
+			event.push(<?php session_start(); echo json_encode(''.$_SESSION['events'][$_SESSION['eventNum']]['cultural']); ?>);
+			event.push(<?php session_start(); echo json_encode(''.$_SESSION['events'][$_SESSION['eventNum']]['outside']); ?>);
+			<?php session_start(); $_SESSION['eventNum']++; ?>
 			events.push(event);
-		<?php } ?>
-		//firgure push with 2 d array or something
+		}
+		
+		for(var i = 0; i < events.length; i++)
+		{
+			for(var j = 0; j < events[i].length; j++)
+			{
+				alert(events[i][j]);	
+			}
+		}
 	}
 </script>
