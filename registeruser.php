@@ -123,32 +123,28 @@
         </form>
       </div>
     
-<div class="RightMainFloat">
+      <div class="RightMainFloat">
         <div class="FloatRow">
-          <h2 style="color: #EE5500">Sign Up to CabinFever-</h2>
-          <p> Ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
-            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
-            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum </p>
+          <h2 style="color: #EE5500">Stop getting bored on weekends!</h2>
+          <p> Our goal is to bring interest to local events at a larger scale.
+            We will try to suggest you to go to events all around your community.
+            When you come back, the events ones that you like and dislike will
+            change the future events you will get. </p>
         </div>
         <div class="FloatRow">
-          <h2 style="color: #99BBFF">Sign Up to CabinFever-</h2>
-          <p> Ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
-            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
-            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum </p>
+          <h2 style="color: #99BBFF">Meet new people with your interests!</h2>
+          <p> We can bring people together that want to do the same things,
+            and hopefully you can new friends on your CabinFever journey! </p>
         </div>
         <div class="FloatRow">
-          <h2 style="color: #EE5500">Sign Up to CabinFever-</h2>
-          <p> Ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
-            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
-            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum </p>
+          <h2 style="color: #EE5500">Help your community!</h2>
+          <p> We want to help your community thrive with more and more activity.
+          Help your neighborhood grow and expand by giving the local events a try.</p>
         </div>
         <div class="FloatRow">
-          <h2 style="color: #99BBFF">Sign Up to CabinFever-</h2>
-          <p> Ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
-            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum
-            ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum </p>
+          <h2 style="color: #99BBFF">So what are you waiting for?</h2>
+          <p> The front door is open for you anytime! </p>
         </div>
-      </div>
     </div>
   </main>
 
